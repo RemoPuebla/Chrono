@@ -7,4 +7,5 @@ ext {
     leakcanary = '1.5.4'
     room = '2.2.3'
     afollestad_dialogs = '3.1.1'
+    recyclerview_version = '1.1.0'
 }

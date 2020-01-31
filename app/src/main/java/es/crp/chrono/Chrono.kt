@@ -1,7 +1,6 @@
 package es.crp.chrono
 
 import android.app.Application
-import androidx.room.Room
 
 class Chrono : Application() {
     companion object {
@@ -11,10 +10,7 @@ class Chrono : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        database = Room.databaseBuilder(
-            applicationContext,
-            ChronoDatabase::class.java,
-            "chrono-db"
-        ).build()
+        database = ChronoDatabase.getDatabase(this)
     }
+
 }

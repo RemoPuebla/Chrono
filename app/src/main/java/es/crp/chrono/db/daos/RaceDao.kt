@@ -1,5 +1,6 @@
 package es.crp.chrono.db.daos
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -9,14 +10,17 @@ import es.crp.chrono.db.models.Race
 @Dao
 interface RaceDao {
     @Query("SELECT * FROM race")
-    fun getAll(): List<Race>
+    fun getAll(): LiveData<List<Race>>
 
     @Query("SELECT * FROM race WHERE uid == (:id)")
     fun getById(id: Int): Race
 
     @Insert
-    fun insertAll(vararg users: Race)
+    fun insert(race: Race): Long
+
+    @Insert
+    fun insertAll(vararg races: Race): List<Long>
 
     @Delete
-    fun delete(user: Race)
+    fun delete(race: Race)
 }
