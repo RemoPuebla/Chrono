@@ -1,0 +1,10 @@
+ext {
+    versionCode = 1
+    versionName = '0.1.0'
+
+    mockito = '2.18.0'
+
+    leakcanary = '1.5.4'
+    room = '2.2.3'
+    afollestad_dialogs = '3.1.1'
+}
